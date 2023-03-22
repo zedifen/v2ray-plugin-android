@@ -1,10 +1,9 @@
 ## [v2ray-plugin](https://github.com/shadowsocks/v2ray-plugin) for [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android)
 
 [![CircleCI](https://circleci.com/gh/shadowsocks/v2ray-plugin-android.svg?style=svg)](https://circleci.com/gh/shadowsocks/v2ray-plugin-android)
-[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=23)
 [![Releases](https://img.shields.io/github/downloads/shadowsocks/v2ray-plugin-android/total.svg)](https://github.com/shadowsocks/v2ray-plugin-android/releases)
 [![Language: Kotlin](https://img.shields.io/github/languages/top/shadowsocks/v2ray-plugin-android.svg)](https://github.com/shadowsocks/v2ray-plugin-android/search?l=kotlin)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/46b34df6fe624ef9a46507126f407880)](https://www.codacy.com/app/shadowsocks/v2ray-plugin-android?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shadowsocks/v2ray-plugin-android&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/github/license/shadowsocks/v2ray-plugin-android.svg)](https://github.com/shadowsocks/v2ray-plugin-android/blob/master/LICENSE)
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
@@ -17,9 +16,9 @@
 ### PREREQUISITES
 
 * JDK 1.8
-* Go 1.11+
+* Go 1.20+
 * Android SDK
-  - Android NDK r19+
+  - Android NDK r25+
 
 ### BUILD
 
