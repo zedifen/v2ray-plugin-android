@@ -1,9 +1,15 @@
 import org.apache.tools.ant.taskdefs.condition.Os
+import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     id("com.android.application")
     kotlin("android")
 }
+
+val localPropertiesFile = rootProject.file("local.properties")
+val localProperties = Properties()
+localProperties.load(FileInputStream(localPropertiesFile))
 
 android {
     val javaVersion = JavaVersion.VERSION_1_8
@@ -21,8 +27,17 @@ android {
         versionName = "1.3.3"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file("release.keystore")
+            storePassword = localProperties.getProperty("storePassword") ?: System.getenv("KEYSTORE_PASS")
+            keyAlias = localProperties.getProperty("keyAlias") ?: System.getenv("KEY_ALIAS_NAME")
+            keyPassword = localProperties.getProperty("keyPassword") ?: System.getenv("KEY_PASS")
+        }
+    }
     buildTypes {
         getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
