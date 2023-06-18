@@ -2,6 +2,8 @@ import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import com.android.build.VariantOutput
 import org.apache.tools.ant.taskdefs.condition.Os
 import java.util.Locale
+import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     id("com.android.application")
@@ -15,6 +17,10 @@ val currentFlavor get() = gradle.startParameter.taskRequests.toString().let { ta
     }
 }
 
+val localPropertiesFile = rootProject.file("local.properties")
+val localProperties = Properties()
+localProperties.load(FileInputStream(localPropertiesFile))
+
 android {
     namespace = "com.github.shadowsocks.plugin.v2ray"
     ndkVersion = "25.2.9519653"
@@ -27,8 +33,17 @@ android {
         versionName = "1.3.7"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file("release.keystore")
+            storePassword = localProperties.getProperty("storePassword") ?: System.getenv("KEYSTORE_PASS")
+            keyAlias = localProperties.getProperty("keyAlias") ?: System.getenv("KEY_ALIAS_NAME")
+            keyPassword = localProperties.getProperty("keyPassword") ?: System.getenv("KEY_PASS")
+        }
+    }
     buildTypes {
         getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
