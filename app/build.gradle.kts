@@ -29,8 +29,8 @@ android {
         applicationId = "com.github.shadowsocks.plugin.v2ray"
         minSdkVersion(23)
         targetSdkVersion(33)
-        versionCode = 1030700
-        versionName = "1.3.7"
+        versionCode = 1030800
+        versionName = "1.3.8"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
