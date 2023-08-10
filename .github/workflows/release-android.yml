@@ -58,7 +58,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           fail_on_unmatched_files: true
-          name: v2ray-plugin-android v${{ github.event.inputs.version }}
+          name: v2ray-plugin-android v${{ github.event.inputs.version_number }}
           tag_name: v${{ github.event.inputs.version_number }}
           files: |
             app/build/outputs/apk/release/*.apk
