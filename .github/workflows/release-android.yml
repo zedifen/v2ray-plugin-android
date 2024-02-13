@@ -13,19 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: 'recursive'
 
       - name: set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: 'stable'
 
@@ -55,7 +55,7 @@ jobs:
           cd -
 
       - name: make release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@master
         with:
           fail_on_unmatched_files: true
           name: v2ray-plugin-android v${{ github.event.inputs.version_number }}
