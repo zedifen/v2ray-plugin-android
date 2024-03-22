@@ -5,7 +5,7 @@ plugins {
 }
 
 buildscript {
-    val kotlinVersion = "1.6.10"
+    val kotlinVersion = "1.6.21"
     extra.set("kotlinVersion", kotlinVersion)
 
     repositories {
@@ -13,7 +13,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.4.1")
+        classpath("com.android.tools.build:gradle:8.1.0")
         classpath("com.github.ben-manes:gradle-versions-plugin:0.28.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }

@@ -58,6 +58,11 @@ android {
     sourceSets.getByName("main") {
         jniLibs.setSrcDirs(jniLibs.srcDirs + files("$projectDir/build/go"))
     }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
 }
 
 tasks.register<Exec>("goBuild") {
