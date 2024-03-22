@@ -86,7 +86,7 @@ dependencies {
     implementation("androidx.preference:preference:1.1.1")
     implementation("com.github.shadowsocks:plugin:1.3.4")
     implementation("com.takisoft.preferencex:preferencex-simplemenu:1.1.0")
-    testImplementation("junit:junit:4.13")
+    testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.5.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
