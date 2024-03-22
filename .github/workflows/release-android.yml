@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+          cache-dependency-path: |
+            app/src/main/go/v2ray-plugin/go.sum
 
       - name: grant execute permission for gradlew
         run: chmod +x gradlew
