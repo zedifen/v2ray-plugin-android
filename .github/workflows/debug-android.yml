@@ -28,6 +28,12 @@ jobs:
       - name: grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: generate local.properties
+        run: |
+          echo "storePassword=$KEYSTORE_PASS" >> local.properties
+          echo "keyPassword=$KEY_PASS" >> local.properties
+          echo "keyAlias=$KEY_ALIAS_NAME" >> local.properties
+
       - name: build with Gradle
         run: ./gradlew assembleDebug check
 
