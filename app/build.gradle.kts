@@ -23,7 +23,7 @@ localProperties.load(FileInputStream(localPropertiesFile))
 
 android {
     namespace = "com.github.shadowsocks.plugin.v2ray"
-    ndkVersion = "25.2.9519653"
+    ndkVersion = "26.2.11394342"
     compileSdkVersion(33)
     defaultConfig {
         applicationId = "com.github.shadowsocks.plugin.v2ray"
