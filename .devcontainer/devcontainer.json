@@ -4,3 +4,31 @@
     "ghcr.io/devcontainers/features/go:latest": {}
   }
 }
+
+/*
+
+cd $HOME
+curl -L 'https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.12%2B7_openj9-0.46.1/ibm-semeru-open-jdk_x64_linux_17.0.12_7_openj9-0.46.1.tar.gz' | tar -xz
+cd -
+
+export JAVA_HOME=$HOME/jdk-17.0.12+7
+export PATH=$HOME/jdk-17.0.12+7/bin:$PATH
+
+export ANDROID_HOME=$HOME/android_home/
+mkdir $ANDROID_HOME
+mkdir $ANDROID_HOME/cmdline-tools/
+
+curl -LO https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+unzip -q *.zip -d $ANDROID_HOME/cmdline-tools/
+rm *.zip
+
+mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
+
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
+
+sdkmanager 'ndk;27.0.12077973'
+
+git submodule init
+git submodule update --depth=1
+
+*/
