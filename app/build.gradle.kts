@@ -12,7 +12,7 @@ val localProperties = Properties()
 localProperties.load(FileInputStream(localPropertiesFile))
 
 android {
-    val javaVersion = JavaVersion.VERSION_1_8
+    val javaVersion = JavaVersion.VERSION_17
     compileSdk = 35
     compileOptions {
         sourceCompatibility = javaVersion
@@ -72,7 +72,6 @@ tasks.whenTaskAdded {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8", rootProject.extra.get("kotlinVersion").toString()))
     implementation("androidx.preference:preference:1.2.1")
     implementation("com.github.shadowsocks:plugin:2.0.1")
     implementation("com.takisoft.preferencex:preferencex-simplemenu:1.1.0")
