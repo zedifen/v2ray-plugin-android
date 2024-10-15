@@ -12,7 +12,7 @@ val localProperties = Properties()
 localProperties.load(FileInputStream(localPropertiesFile))
 
 android {
-    val javaVersion = JavaVersion.VERSION_17
+    val javaVersion = JavaVersion.VERSION_21
     compileSdk = 35
     compileOptions {
         sourceCompatibility = javaVersion

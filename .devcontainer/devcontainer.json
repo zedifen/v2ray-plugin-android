@@ -8,11 +8,11 @@
 /*
 
 cd $HOME
-curl -L 'https://github.com/ibmruntimes/semeru17-binaries/releases/download/jdk-17.0.12%2B7_openj9-0.46.1/ibm-semeru-open-jdk_x64_linux_17.0.12_7_openj9-0.46.1.tar.gz' | tar -xz
+curl -L 'https://github.com/ibmruntimes/semeru21-binaries/releases/download/jdk-21.0.4%2B7_openj9-0.46.1/ibm-semeru-open-jdk_x64_linux_21.0.4_7_openj9-0.46.1.tar.gz' | tar -xz
 cd -
 
-export JAVA_HOME=$HOME/jdk-17.0.12+7
-export PATH=$HOME/jdk-17.0.12+7/bin:$PATH
+export JAVA_HOME=$HOME/jdk-21.0.4+7
+export PATH=$HOME/jdk-21.0.4+7/bin:$PATH
 
 export ANDROID_HOME=$HOME/android_home/
 mkdir $ANDROID_HOME
